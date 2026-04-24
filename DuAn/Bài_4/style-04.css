@@ -1,0 +1,290 @@
+:root {
+  --bg-presentation: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 99%, #FECFEF 100%);
+  --app-bg: #FAFAFC; /* Màu nền app xám trắng cực nhạt để làm nổi bật thẻ */
+  --card-bg: #FFFFFF;
+  
+  --text-main: #2D3142; /* Xanh Navy rất đậm thay vì đen */
+  --text-muted: #8D99AE;
+  
+  /* Gradient kích thích mua sắm */
+  --accent-gradient: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+  --accent-solid: #FF416C;
+  --accent-light: #FFE5E9;
+  
+  --font-main: 'Nunito', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-presentation);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.mobile-app-wrapper {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--app-bg);
+  border-radius: 40px;
+  /* Viền trắng dày tạo cảm giác vỏ điện thoại */
+  border: 8px solid #FFFFFF; 
+  /* Bóng đổ lớn, có màu hồng nhạt lan tỏa */
+  box-shadow: 0 25px 50px rgba(255, 65, 108, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 90vh;
+  max-height: 850px;
+}
+
+/* HEADER*/
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 25px 15px 25px;
+  background-color: var(--app-bg);
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 14px;
+  background: var(--accent-light);
+  color: var(--accent-solid);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: var(--accent-solid);
+  color: #FFF;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 65, 108, 0.3);
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.spacer {
+  width: 45px;
+}
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 25px 30px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.app-content::-webkit-scrollbar {
+  display: none;
+}
+.neu-card {
+  background-color: var(--card-bg);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(141, 153, 174, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.neu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(141, 153, 174, 0.2);
+}
+
+.neu-card h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--accent-solid);
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.address-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px dashed rgba(141, 153, 174, 0.3);
+}
+
+.item-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item-info h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.item-info p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.item-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent-solid);
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.custom-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.custom-radio input[type="radio"] {
+  display: none;
+}
+.radio-mark {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--app-bg);
+  border: 2px solid #E2E8F0;
+  margin-right: 15px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-radio input[type="radio"]:checked + .radio-mark {
+  border-color: var(--accent-solid);
+  background-color: #FFF;
+}
+
+/* Chấm tròn bung ra mượt mà */
+.custom-radio input[type="radio"]:checked + .radio-mark::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  animation: popIn 0.3s ease forwards;
+}
+
+@keyframes popIn {
+  0% { transform: translate(-50%, -50%) scale(0); }
+  80% { transform: translate(-50%, -50%) scale(1.2); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.custom-radio span {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.custom-radio input[type="radio"]:checked ~ span {
+  color: var(--text-main);
+}
+
+.app-footer {
+  padding: 25px 30px 30px;
+  background-color: var(--card-bg);
+  box-shadow: 0 -10px 30px rgba(141, 153, 174, 0.1); 
+  border-radius: 0 0 32px 32px;
+  z-index: 10;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.total-row p:first-child {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.total-amount {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+.neu-button {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  border-radius: 16px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: 0 10px 20px rgba(255, 65, 108, 0.3);
+  transition: all 0.3s ease;
+}
+
+.neu-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(255, 65, 108, 0.4);
+}
+
+.neu-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px rgba(255, 65, 108, 0.3);
+}

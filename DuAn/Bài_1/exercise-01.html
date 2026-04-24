@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 01 - Premium City Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>City Explorer<span class="gold-dot">.</span></h1>
+      <button type="button" class="btn-search">Search</button>
+    </header>
+
+    <main class="app-content">
+      <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+          <h2>Welcome Back</h2>
+          <p>Plan your exclusive weekend in one tap.</p>
+        </div>
+      </section>
+
+      <section class="places-section">
+        <div class="section-header">
+          <h2>Popular Places</h2>
+          <div class="line"></div>
+        </div>
+        
+        <div class="places-grid">
+          <article class="place-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="card-content">
+              <h3>Old Town Market</h3>
+              <p>Fine food and vintage crafts</p>
+              <button type="button" class="btn-view">View Detail</button>
+            </div>
+          </article>
+
+          <article class="place-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1513622470522-26c311a071f9?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="card-content">
+              <h3>River Walk</h3>
+              <p>Evening city lights trail</p>
+              <button type="button" class="btn-view">View Detail</button>
+            </div>
+          </article>
+
+          <article class="place-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="card-content">
+              <h3>Art Street</h3>
+              <p>Exclusive weekend exhibitions</p>
+              <button type="button" class="btn-view">View Detail</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <nav class="app-nav">
+      <a href="#" class="active">Home</a>
+      <a href="#">Map</a>
+      <a href="#">Saved</a>
+      <a href="#">Profile</a>
+    </nav>
+  </body>
+</html>

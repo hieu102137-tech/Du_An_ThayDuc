@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 02 - Tablet Learning Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-02.css">
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <header class="dash-header">
+        <h1>Learning Dashboard<span class="gold-dot">.</span></h1>
+        <button type="button" class="btn-notify">Notifications</button>
+      </header>
+
+      <main class="dash-main">
+        <section class="dash-section progress-section">
+          <div class="progress-overlay"></div>
+          <div class="progress-content">
+            <h2>Progress Overview</h2>
+            <p>2 courses active, 1 due this week.</p>
+          </div>
+        </section>
+
+        <div class="dash-grid">
+          <section class="dash-section courses-section">
+            <div class="section-header">
+              <h2>Continue Learning</h2>
+              <div class="line"></div>
+            </div>
+            
+            <div class="course-list">
+              <article class="course-card">
+                <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="course-info">
+                  <div class="info-text">
+                    <h3>UX Writing Basics</h3>
+                    <p>Lesson 5 of 12</p>
+                  </div>
+                  <button type="button" class="btn-resume">Resume</button>
+                </div>
+              </article>
+
+              <article class="course-card">
+                <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="course-info">
+                  <div class="info-text">
+                    <h3>Design Systems</h3>
+                    <p>Lesson 3 of 8</p>
+                  </div>
+                  <button type="button" class="btn-resume">Resume</button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="dash-section tasks-section">
+            <div class="section-header">
+              <h2>Upcoming Tasks</h2>
+              <div class="line"></div>
+            </div>
+            
+            <ul class="task-list">
+              <li>
+                <div class="task-bullet"></div>
+                <div class="task-text">Quiz: Accessibility Basics</div>
+              </li>
+              <li>
+                <div class="task-bullet"></div>
+                <div class="task-text">Project: Travel App Wireframe</div>
+              </li>
+              <li>
+                <div class="task-bullet"></div>
+                <div class="task-text">Peer Review: Checkout Flow</div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

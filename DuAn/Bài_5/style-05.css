@@ -1,0 +1,315 @@
+:root {
+  --bg-body: #05050A; 
+  --bg-card: #0F0F1A; 
+  --text-main: #E2E8F0;
+  --text-muted: #8B949E;
+  
+  /* Màu Dạ Quang (Neon) */
+  --neon-cyan: #05D9E8;
+  --neon-pink: #FF2A6D;
+  --neon-blue: #01ABE9;
+  
+  --border-color: #1A1C29;
+  
+  --font-main: 'Inter', sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-body);
+  background-image: 
+    linear-gradient(rgba(5, 217, 232, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 217, 232, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: var(--text-main);
+  line-height: 1.5;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/*LAYOUT & HEADER */
+.page-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Chữ phát sáng màu Cyan */
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px rgba(5, 217, 232, 0.5), 0 0 20px rgba(5, 217, 232, 0.3);
+}
+
+.page-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Khối Form chính */
+.settings-form {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(5, 217, 232, 0.2);
+  box-shadow: 0 0 30px rgba(1, 171, 233, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.settings-form::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink), var(--neon-blue));
+}
+
+.form-section {
+  padding: 30px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  .form-section {
+    flex-direction: row;
+    gap: 30px;
+  }
+  .section-header {
+    width: 30%;
+    flex-shrink: 0;
+  }
+  .section-content {
+    flex-grow: 1;
+  }
+}
+
+.section-header h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--neon-pink);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*FORM INPUTS & SELECTS*/
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group:last-child { margin-bottom: 0; }
+.mt-3 { margin-top: 20px; }
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #2A2D3E;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input::placeholder { color: #4B5563; }
+
+input:focus,
+select:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(5, 217, 232, 0.3), inset 0 0 10px rgba(5, 217, 232, 0.1);
+}
+
+.select-wrapper { position: relative; }
+.select-wrapper::after {
+  content: '▼';
+  font-size: 0.8rem;
+  color: var(--neon-cyan);
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+select option { background-color: var(--bg-card); color: #fff; }
+
+/*Công tắc Neon*/
+.toggle-group {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* Rãnh công tắc */
+.slider {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+  background-color: #1A1C29;
+  border: 1px solid #333;
+  border-radius: 34px;
+  transition: 0.4s;
+  margin-right: 15px;
+}
+
+/* Nút gạt */
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--text-muted);
+  border-radius: 50%;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Hiệu ứng nảy */
+}
+
+/* Bật công tắc -> Đổi sang Neon Pink và phát sáng */
+.toggle-switch input:checked + .slider {
+  background-color: rgba(255, 42, 109, 0.2);
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 10px rgba(255, 42, 109, 0.4);
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(24px);
+  background-color: var(--neon-pink);
+  box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.toggle-text {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/*BUTTONS*/
+.security-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-actions {
+  padding: 25px 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+button {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Nút chính (Gradient Neon) */
+.btn-primary {
+  background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue));
+  color: white;
+  border: none;
+  box-shadow: 0 0 15px rgba(255, 42, 109, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(255, 42, 109, 0.7);
+}
+
+/* Nút phụ */
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--text-muted);
+}
+
+.btn-outline:hover {
+  border-color: var(--text-main);
+  background-color: rgba(255,255,255,0.05);
+}
+
+/* Nút bảo mật (Viền Neon Cyan) */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(5, 217, 232, 0.1) inset;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(5, 217, 232, 0.1);
+  box-shadow: 0 0 15px rgba(5, 217, 232, 0.4) inset, 0 0 15px rgba(5, 217, 232, 0.4);
+  text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+/* Responsive */
+@media (max-width: 599px) {
+  .form-section { padding: 20px; }
+  .section-header { margin-bottom: 15px; }
+  .form-actions {
+    padding: 20px;
+    flex-direction: column-reverse;
+  }
+  .form-actions button { width: 100%; }
+  .security-actions { flex-direction: column; }
+}

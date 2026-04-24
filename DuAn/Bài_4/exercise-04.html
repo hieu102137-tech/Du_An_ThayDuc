@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 04 - Mobile Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-04.css">
+  </head>
+  <body>
+    <div class="mobile-app-wrapper">
+      
+      <header class="app-header">
+        <a href="#" class="btn-back">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </a>
+        <h1>Checkout</h1>
+        <div class="spacer"></div>
+      </header>
+
+      <main class="app-content">
+        
+        <section class="neu-card">
+          <div class="section-header">
+            <h2>Delivery Address</h2>
+            <button type="button" class="btn-text">Change</button>
+          </div>
+          <p class="address-text">123 Lake Street, District 2</p>
+        </section>
+
+        <section class="neu-card">
+          <h2>Items</h2>
+          <div class="item-list">
+            <article class="item-row">
+              <div class="item-info">
+                <h3>Wireless Headphones</h3>
+                <p>Qty: 1</p>
+              </div>
+              <p class="item-price">$79</p>
+            </article>
+            
+            <article class="item-row">
+              <div class="item-info">
+                <h3>Phone Stand</h3>
+                <p>Qty: 2</p>
+              </div>
+              <p class="item-price">$24</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="neu-card">
+          <h2>Payment Method</h2>
+          <form class="payment-form">
+            
+            <label class="custom-radio">
+              <input type="radio" name="pay" checked />
+              <div class="radio-mark"></div>
+              <span>Credit Card</span>
+            </label>
+            
+            <label class="custom-radio">
+              <input type="radio" name="pay" />
+              <div class="radio-mark"></div>
+              <span>E-Wallet</span>
+            </label>
+            
+            <label class="custom-radio">
+              <input type="radio" name="pay" />
+              <div class="radio-mark"></div>
+              <span>Cash on Delivery</span>
+            </label>
+
+          </form>
+        </section>
+
+      </main>
+
+      <footer class="app-footer neu-card-top">
+        <div class="total-row">
+          <p>Total:</p>
+          <p class="total-amount">$103</p>
+        </div>
+        <button type="button" class="btn-primary neu-button">Place Order</button>
+      </footer>
+
+    </div>
+  </body>
+</html>
